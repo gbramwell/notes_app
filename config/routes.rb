@@ -1,4 +1,8 @@
 NotesApp::Application.routes.draw do
+  resources :tasks
+
+  root :to => 'tasks#new'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
