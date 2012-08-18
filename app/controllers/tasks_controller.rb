@@ -1,4 +1,9 @@
 class TasksController < ApplicationController
+  def index
+    @task = Task.new
+    @tasks = Task.all
+  end
+
   def new
     @task = Task.new
   end
@@ -7,7 +12,7 @@ class TasksController < ApplicationController
     @task = Task.new(params[:task])
 
     if @task.save
-      render :text => @task.description
+      redirect_to :action => 'index'
     end
   end
 end

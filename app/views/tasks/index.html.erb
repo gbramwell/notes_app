@@ -1,0 +1,7 @@
+<%= render :partial => 'form'%>
+
+<ul>
+<% @tasks.each do |task| %>
+  <li><%= task.description %></li>
+<% end %>
+</ul>
