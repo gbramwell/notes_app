@@ -1,7 +1,9 @@
 NotesApp::Application.routes.draw do
-  resources :tasks
+  resources :tasks do
+    put :complete, :on => :member
+  end
 
-  root :to => 'tasks#new'
+  root :to => 'tasks#index'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

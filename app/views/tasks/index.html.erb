@@ -2,6 +2,10 @@
 
 <ul>
 <% @tasks.each do |task| %>
-  <li><%= task.description %></li>
+  <li>
+    <%= task.description %>
+    <%= link_to 'Delete', task_path(task), :method => :delete %>
+    <%= link_to('Complete', complete_task_path(task), :method => :put) unless task.complete? %>
+  </li>
 <% end %>
 </ul>

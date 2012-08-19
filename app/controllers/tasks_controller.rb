@@ -15,4 +15,18 @@ class TasksController < ApplicationController
       redirect_to :action => 'index'
     end
   end
+
+  def destroy
+    @task = Task.find(params[:id])
+
+    @task.destroy
+    redirect_to :action => 'index'
+  end
+
+  def complete
+    @task = Task.find(params[:id])
+
+    @task.complete!
+    redirect_to :action => 'index'
+  end
 end
